@@ -8,26 +8,11 @@
 </head>
 <body class="bg-light">
 
-  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="index.html">💱 Conversor</a>
-      <div class="collapse navbar-collapse">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item"><a class="nav-link" href="todas.html">🌐 Todas</a></li>
-          <li class="nav-item"><a class="nav-link" href="america.html">🌎 América</a></li>
-          <li class="nav-item"><a class="nav-link" href="europa.html">🌍 Europa</a></li>
-          <li class="nav-item"><a class="nav-link" href="asia.html">🌏 Asia</a></li>
-          <li class="nav-item"><a class="nav-link" href="africa.html">🌍 África</a></li>
-          <li class="nav-item"><a class="nav-link" href="oceania.html">🌊 Oceanía</a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-
-  <div class="container text-center mt-5">
-    <h2>💱 Conversor de Monedas por Continente</h2>
-    <p>Elegí un continente en el menú para comenzar.</p>
-  </div>
+  <!-- Todo se crea dinámicamente con JavaScript -->
+  <script src="js/dom.js"></script>
+  <script>
+    inicializarPagina("principal", null, null, "index.html");
+  </script>
 
 </body>
 </html>

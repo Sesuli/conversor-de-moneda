@@ -16,39 +16,41 @@ const banderas = {
 };
 
 function iniciarConversor(cont) {
-  const base = document.getElementById("base");
-  const destino = document.getElementById("destino");
-  const resultado = document.getElementById("resultado");
-  const btn = document.getElementById("convertir");
+  setTimeout(() => {
+    const base = document.getElementById("base");
+    const destino = document.getElementById("destino");
+    const resultado = document.getElementById("resultado");
+    const btn = document.getElementById("convertir");
 
-  // Cargar opciones
-  monedas[cont].forEach(m => {
-    base.append(new Option(m, m));
-    destino.append(new Option(m, m));
-  });
+    // Cargar opciones
+    monedas[cont].forEach(m => {
+      base.append(new Option(m, m));
+      destino.append(new Option(m, m));
+    });
 
-  // Mostrar bandera al lado del select
-  const mostrarBandera = s => {
-    const f = banderas[s.value];
-    s.style.background = `url(https://flagcdn.com/24x18/${f}.png) no-repeat 8px center`;
-    s.style.paddingLeft = "35px";
-  };
+    // Mostrar bandera al lado del select
+    const mostrarBandera = s => {
+      const f = banderas[s.value];
+      s.style.background = `url(https://flagcdn.com/24x18/${f}.png) no-repeat 8px center`;
+      s.style.paddingLeft = "35px";
+    };
 
-  base.onchange = () => mostrarBandera(base);
-  destino.onchange = () => mostrarBandera(destino);
-  mostrarBandera(base);
-  mostrarBandera(destino);
+    base.onchange = () => mostrarBandera(base);
+    destino.onchange = () => mostrarBandera(destino);
+    mostrarBandera(base);
+    mostrarBandera(destino);
 
-  // Botón de conversión
-  btn.onclick = async () => {
-    try {
-      const cant = document.getElementById("cantidad").value;
-      const res = await fetch(`https://open.er-api.com/v6/latest/${base.value}`);
-      const data = await res.json();
-      const tasa = data.rates[destino.value];
-      resultado.textContent = `${cant} ${base.value} = ${(cant * tasa).toFixed(2)} ${destino.value}`;
-    } catch {
-      resultado.textContent = "❌ Error al obtener datos.";
-    }
-  };
+    // Botón de conversión
+    btn.onclick = async () => {
+      try {
+        const cant = document.getElementById("cantidad").value;
+        const res = await fetch(`https://open.er-api.com/v6/latest/${base.value}`);
+        const data = await res.json();
+        const tasa = data.rates[destino.value];
+        resultado.textContent = `${cant} ${base.value} = ${(cant * tasa).toFixed(2)} ${destino.value}`;
+      } catch {
+        resultado.textContent = "❌ Error al obtener datos.";
+      }
+    };
+  }, 50);
 }
