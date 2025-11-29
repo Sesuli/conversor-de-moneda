@@ -148,7 +148,7 @@ git clone https://github.com/Sesuli/conversor-de-moneda.git
 
 Este proyecto es de código abierto y está disponible para fines educativos.
 
-## 👤 Autor Thiago Ulises Gutierrez
+## 👤 Autor: Thiago Ulises Gutierrez
 
 Proyecto desarrollado como práctica de manipulación del DOM y consumo de APIs.
 
