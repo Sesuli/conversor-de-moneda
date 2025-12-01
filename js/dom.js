@@ -18,7 +18,7 @@ function crearNavbar(paginaActual) {
   const brand = document.createElement("a");
   brand.className = "navbar-brand";
   brand.href = "index.html";
-  brand.innerHTML = "💱 Conversor";
+  brand.textContent = "💱 Conversor";
   
   const menuColapsable = document.createElement("div");
   menuColapsable.className = "collapse navbar-collapse";
@@ -34,7 +34,7 @@ function crearNavbar(paginaActual) {
     const a = document.createElement("a");
     a.classList.add("nav-link");
     a.href = pagina.archivo;
-    a.innerHTML = pagina.nombre;
+    a.textContent = pagina.nombre;
     
     // Marca como activo el link de la página actual
     if (pagina.archivo === paginaActual) {
@@ -59,7 +59,7 @@ function crearFormularioConversor(titulo, continente) {
   container.dataset.continente = continente; // Almacena el continente en atributo data
   
   const h3 = document.createElement("h3");
-  h3.innerHTML = titulo;
+  h3.textContent = titulo;
   container.append(h3);
   
   const card = document.createElement("div");
@@ -77,7 +77,7 @@ function crearFormularioConversor(titulo, continente) {
   const btn = document.createElement("button");
   btn.id = "convertir";
   btn.classList.add("btn", "btn-primary", "w-100");
-  btn.innerHTML = "Convertir";
+  btn.textContent = "Convertir";
   
   const resultado = document.createElement("h4");
   resultado.id = "resultado";
@@ -103,7 +103,7 @@ function crearCampoFormulario(id, texto, tipo, tipoInput = null) {
   const label = document.createElement("label");
   label.className = "form-label";
   label.setAttribute("for", id);
-  label.innerHTML = texto;
+  label.textContent = texto;
   
   let campo;
   if (tipo === "select") {
@@ -138,10 +138,10 @@ function crearPaginaPrincipal() {
   container.className = "container text-center mt-5";
   
   const h2 = document.createElement("h2");
-  h2.innerHTML = "💱 Conversor de Monedas por Continente";
+  h2.textContent = "💱 Conversor de Monedas por Continente";
   
   const p = document.createElement("p");
-  p.innerHTML = "Elegí un continente en el menú para comenzar.";
+  p.textContent = "Elegí un continente en el menú para comenzar.";
   
   container.append(h2, p);
   document.body.append(container);
